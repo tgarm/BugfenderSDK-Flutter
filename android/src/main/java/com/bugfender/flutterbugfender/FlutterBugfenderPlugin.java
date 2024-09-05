@@ -147,7 +147,9 @@ public class FlutterBugfenderPlugin implements FlutterPlugin, MethodChannel.Meth
                         url = Bugfender.sendUserFeedback(title, issue_val);
                         break;
                 }
-                result.success(url.toString());
+                if(url!=null){
+                    result.success(url.toString());
+                }
                 break;
             case "setForceEnabled":
                 Boolean enabled = call.arguments();
